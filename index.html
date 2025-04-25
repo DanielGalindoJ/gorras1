@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gorras Premium | Estilo y Protección</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #7f8c8d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1521369909029-2afed882baee?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 4rem 0 2rem;
+            font-size: 2.5rem;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .product-description {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-sm {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 3rem 0;
+            list-style: none;
+        }
+
+        .pagination li {
+            margin: 0 5px;
+        }
+
+        .pagination a {
+            display: block;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s;
+        }
+
+        .pagination a:hover {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+
+        .pagination .active a {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+
+        /* Modal de detalles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 800px;
+            width: 90%;
+            position: relative;
+            animation: fadeIn 0.4s;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--accent);
+        }
+
+        .product-detail {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .product-detail-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .product-detail-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .product-detail-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .product-detail-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .product-detail-price {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .product-detail-description {
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .product-detail-features {
+            margin-bottom: 2rem;
+        }
+
+        .product-detail-features li {
+            margin-bottom: 0.5rem;
+            list-style-position: inside;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-column p {
+            margin-bottom: 1rem;
+            color: #bdc3c7;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 1.5rem;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 1rem;
+            }
+
+            .hero {
+                height: 50vh;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .product-detail {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .product-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-hat-cowboy"></i>
+                <span>Gorras Premium</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="container hero-content">
+            <h1>Gorras de Calidad para tu Estilo Único</h1>
+            <p>Descubre nuestra colección exclusiva de gorras diseñadas para destacar. Calidad, comodidad y estilo en un
+                solo lugar.</p>
+            <div>
+                <a href="#productos" class="btn">Ver Colección</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="productos">
+        <h2 class="section-title">Nuestras Gorras</h2>
+        <div class="products" id="products-container">
+            <!-- Productos se cargarán aquí con JavaScript -->
+        </div>
+
+        <ul class="pagination" id="pagination">
+            <!-- Paginación se generará con JavaScript -->
+        </ul>
+    </section>
+
+    <!-- Modal de detalles del producto -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="product-detail" id="productDetailContent">
+                <!-- Contenido se cargará con JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Sobre Nosotros</h3>
+                    <p>Somos apasionados por el diseño y la calidad. Cada gorra es creada con atención al detalle para
+                        ofrecerte lo mejor.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Ciudad</p>
+                    <p><i class="fas fa-phone"></i> +54 9 1234 5678</p>
+                    <p><i class="fas fa-envelope"></i> info@gorraspremium.com</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Horario</h3>
+                    <p>Lunes a Viernes: 9am - 6pm</p>
+                    <p>Sábados: 10am - 2pm</p>
+                    <a href="https://wa.me/3195199095?text=Hola,%20estoy%20interesado%20en%20sus%20gorras"
+                        class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Gorras Premium. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Datos de productos ampliados (15 productos)
+        const products = [
+            {
+                id: 1,
+                title: "Gorra Clásica Negra",
+                description: "Gorra de algodón 100% con ajuste perfecto. Ideal para cualquier ocasión.",
+                price: "$24.99",
+                image: "https://images.unsplash.com/photo-1527719327859-c6ce80353573?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+                details: "Esta gorra clásica negra está confeccionada con algodón 100% de alta calidad. Cuenta con un diseño atemporal que combina con cualquier estilo. La visera curva ofrece protección solar óptima, mientras que el cierre ajustable garantiza un ajuste cómodo para cualquier tamaño de cabeza.",
+                features: [
+                    "Material: 100% algodón",
+                    "Ajuste: Cierre trasero regulable",
+                    "Visera: Curva, 7 cm de largo",
+                    "Lavable a máquina",
+                    "Disponible en tallas S/M y L/XL"
+                ]
+            },
+            {
+                id: 2,
+                title: "Gorra Snapback Roja",
+                description: "Estilo urbano con cierre ajustable. Visera curva para mayor protección solar.",
+                price: "$29.99",
+                image: "https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+                details: "La gorra snapback roja es perfecta para quienes buscan un estilo urbano y moderno. Con un diseño de panel plano y cierre snapback ajustable, ofrece versatilidad y comodidad. La visera curva proporciona excelente protección contra el sol.",
+                features: [
+                    "Material: Mezcla de algodón/poliéster",
+                    "Cierre: Snapback ajustable",
+                    "Visera: Curva, 8 cm de largo",
+                    "Resistente al encogimiento",
+                    "Peso ligero: 120g"
+                ]
+            },
+            {
+                id: 3,
+                title: "Gorra Trucker Azul",
+                description: "Parte trasera de malla para mayor ventilación. Diseño moderno y duradero.",
+                price: "$27.50",
+                image: "https://images.unsplash.com/photo-1591527915235-8c6dfa46a4f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+                details: "La gorra trucker azul combina estilo y funcionalidad con su parte trasera de malla transpirable. Ideal para días calurosos o actividades al aire libre. La frente rígida mantiene su forma incluso con uso frecuente.",
+                features: [
+                    "Parte delantera: Algodón 100%",
+                    "Parte trasera: Malla transpirable",
+                    "Visera: Pre-curvada",
+                    "Ajuste: Hebilla plástica",
+                    "Ideal para actividades al aire libre"
+                ]
+            },
+            {
+                id: 4,
+                title: "Gorra Plana Gris",
+                description: "Estilo minimalista sin botón superior. Material suave y ligero para todo el día.",
+                price: "$22.99",
+                image: "https://images.unsplash.com/photo-1534215754734-2e1b6a3f4c1c?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+                details: "La gorra plana gris ofrece un look minimalista y moderno. Sin botón superior para mayor comodidad, fabricada en material suave que no irrita la piel. Perfecta para uso diario y largas jornadas.",
+                features: [
+                    "Material: Mezcla algodón/poliéster",
+                    "Sin botón superior",
+                    "Visera: Recta, 6 cm",
+                    "Peso: 95g (ultraligera)",
+                    "Ajuste: Tallaje normal"
+                ]
+            },
+            {
+                id: 5,
+                title: "Gorra Deportiva Negra",
+                description: "Tecnología Dry-Fit para mantenerte fresco. Ideal para actividades al aire libre.",
+                price: "$31.99",
+                image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+                details: "Diseñada para atletas y personas activas, esta gorra deportiva negra cuenta con tecnología Dry-Fit que aleja el sudor de tu piel. Material ultraliviano que no restringe el movimiento.",
+                features: [
+                    "Tecnología: Dry-Fit",
+                    "Material: Poliéster técnico",
+                    "Visera: Pre-curvada reforzada",
+                    "Lavable a máquina",
+                    "Protección UV 50+"
+                ]
+            },
+            {
+                id: 6,
+                title: "Gorra Vintage Beige",
+                description: "Inspirada en los años 90. Ajuste cómodo y diseño retro auténtico.",
+                price: "$26.50",
+                image: "https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+                details: "Revive el estilo de los 90 con esta gorra vintage beige. Diseño retro con logotipo bordado a mano. Ajuste cómodo que no aprieta, ideal para looks casuales con personalidad.",
+                features: [
+                    "Estilo: Vintage años 90",
+                    "Material: Algodón envejecido",
+                    "Logotipo: Bordado a mano",
+                    "Visera: Semi-curva",
+                    "Incluye: Etiqueta retro"
+                ]
+            },
+            {
+                id: 7,
+                title: "Gorra de Lana Invierno",
+                description: "Abrigada y elegante para los días fríos. Forro interior suave.",
+                price: "$34.99",
+                image: "https://images.unsplash.com/photo-1547707985-7327428bf70b?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+                details: "Protege tu cabeza del frío con estilo. Esta gorra de lana para invierno tiene forro interior de felpa suave que mantiene el calor sin picar. Diseño unisex que combina con abrigos y chaquetas.",
+                features: [
+                    "Material: Lana merino 80%",
+                    "Forro: Felpa suave",
+                    "Ajuste: Elástico cómodo",
+                    "Lavado: A mano",
+                    "Temporada: Otoño/Invierno"
+                ]
+            },
+            {
+                id: 8,
+                title: "Gorra Militar Verde",
+                description: "Diseño robusto con detalles militares. Resistente al agua y duradera.",
+                price: "$28.75",
+                image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+                details: "Inspirada en gorras de combate, esta gorra militar verde es tan resistente como elegante. Tratamiento repelente al agua y costuras reforzadas para mayor durabilidad. Ideal para aventuras al aire libre.",
+                features: [
+                    "Material: Algodón canvas",
+                    "Tratamiento: Repelente al agua",
+                    "Visera: Recta reforzada",
+                    "Detalles: Hebillas metálicas",
+                    "Resistencia: Costuras reforzadas"
+                ]
+            },
+            {
+                id: 9,
+                title: "Gorra de Piel Sintética",
+                description: "Elegancia y estilo en un diseño único. Perfecta para ocasiones especiales.",
+                price: "$39.99",
+                image: "https://images.unsplash.com/photo-1591946614720-90a587b4d1d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+                details: "Para looks sofisticados, esta gorra de piel sintética ofrece un acabado de lujo sin usar productos animales. Diseño ajustable con interior transpirable. Perfecta para eventos y ocasiones especiales.",
+                features: [
+                    "Material: Piel sintética premium",
+                    "Forro: Seda sintética",
+                    "Ajuste: Cinta interior",
+                    "Visera: Corta y rígida",
+                    "Cuidado: Limpieza en seco"
+                ]
+            },
+            {
+                id: 10,
+                title: "Gorra de Béisbol Blanca",
+                description: "Clásico diseño de béisbol con logotipo bordado. Ajuste perfecto.",
+                price: "$23.99",
+                image: "https://images.unsplash.com/photo-1521369909029-2afed882baee?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+                details: "El clásico nunca pasa de moda. Esta gorra de béisbol blanca tiene el diseño tradicional con visera curva y logotipo bordado al frente. Seis paneles de algodón para máxima comodidad.",
+                features: [
+                    "Estilo: Béisbol clásico",
+                    "Paneles: 6 costuras",
+                    "Logotipo: Bordado",
+                    "Visera: Curva tradicional",
+                    "Ajuste: Tallaje normal"
+                ]
+            },
+            {
+                id: 11,
+                title: "Gorra Camuflada",
+                description: "Patrón de camuflaje moderno. Ideal para caza y actividades outdoor.",
+                price: "$27.25",
+                image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+                details: "Diseño camuflado para amantes de la aventura. Esta gorra combina estilo y funcionalidad con un patrón de camuflaje moderno que no pasa desapercibido. Material resistente a rasgaduras.",
+                features: [
+                    "Patrón: Camuflaje digital",
+                    "Material: Poliéster resistente",
+                    "Visera: Pre-curvada",
+                    "Uso: Caza, pesca, outdoor",
+                    "Incluye: Mosquetón para enganche"
+                ]
+            },
+            {
+                id: 12,
+                title: "Gorra Hip Hop",
+                description: "Estilo urbano con visera extra ancha. Ajuste snapback moderno.",
+                price: "$32.50",
+                image: "https://images.unsplash.com/photo-1590071089561-2085c1ddf6e6?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+                details: "Para los amantes del hip hop y la cultura urbana, esta gorra con visera extra ancha ofrece el look auténtico. Ajuste snapback con cierre metálico de calidad. Logotipo en relieve.",
+                features: [
+                    "Visera: Extra ancha (10cm)",
+                    "Ajuste: Snapback metálico",
+                    "Diseño: Logotipo en relieve",
+                    "Paneles: 5 costuras",
+                    "Estilo: Urbano/Hip Hop"
+                ]
+            },
+            {
+                id: 13,
+                title: "Gorra de Paja Natural",
+                description: "Fresca y transpirable para el verano. Protección solar con estilo.",
+                price: "$21.99",
+                image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+                details: "Protege tu cabeza del sol con esta elegante gorra de paja natural. Tejido transpirable que mantiene fresco incluso en los días más calurosos. Diseño veraniego para playa o ciudad.",
+                features: [
+                    "Material: Paja natural tejida",
+                    "Visera: Circular 360°",
+                    "Forro: Cinta de algodón",
+                    "Protección: UPF 50+",
+                    "Temporada: Verano"
+                ]
+            },
+            {
+                id: 14,
+                title: "Gorra de Cuero Marrón",
+                description: "Elegancia en cuero genuino. Envejece con carácter.",
+                price: "$45.99",
+                image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+                details: "Fabricada en cuero genuino que desarrolla un hermoso patina con el uso. Esta gorra marrón ofrece un look sofisticado que mejora con el tiempo. Forro interior suave para mayor comodidad.",
+                features: [
+                    "Material: Cuero genuino",
+                    "Acabado: Envejecido natural",
+                    "Visera: Corta y rígida",
+                    "Ajuste: Cinta interior",
+                    "Cuidado: Crema para cuero incluida"
+                ]
+            },
+            {
+                id: 15,
+                title: "Gorra Running Ultraligera",
+                description: "Diseño aerodinámico para corredores. Pesa solo 85 gramos.",
+                price: "$36.75",
+                image: "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+                details: "Especialmente diseñada para corredores, esta gorra ultraligera casi no se siente en la cabeza. Material transpirable con tecnología de ventilación activa. Reflectante para mayor seguridad en la noche.",
+                features: [
+                    "Peso: 85 gramos",
+                    "Tecnología: Ventilación activa",
+                    "Material: Poliéster técnico",
+                    "Visera: Perforada",
+                    "Seguridad: Detalles reflectantes"
+                ]
+            }
+        ];
+
+        // Configuración de paginación (5 productos por página)
+        const productsPerPage = 5;
+        let currentPage = 1;
+
+        // Elementos del DOM
+        const productsContainer = document.getElementById('products-container');
+        const paginationElement = document.getElementById('pagination');
+        const modal = document.getElementById('productModal');
+        const modalContent = document.getElementById('productDetailContent');
+        const closeModal = document.querySelector('.close-modal');
+
+        // Función para mostrar productos
+        function displayProducts(page) {
+            productsContainer.innerHTML = '';
+
+            const startIndex = (page - 1) * productsPerPage;
+            const endIndex = startIndex + productsPerPage;
+            const paginatedProducts = products.slice(startIndex, endIndex);
+
+            paginatedProducts.forEach(product => {
+                const productElement = document.createElement('div');
+                productElement.className = 'product-card animated';
+                productElement.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.title}">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">${product.title}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <p class="product-price">${product.price}</p>
+                        <div class="product-actions">
+                            <button class="btn btn-sm btn-outline view-details" data-id="${product.id}">Ver Detalles</button>
+                            <a href="https://wa.me/3195199095?text=Hola,%20estoy%20interesado%20en%20la%20gorra%20${encodeURIComponent(product.title)}%20(${encodeURIComponent(product.price)})" 
+                               class="btn btn-sm btn-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Consultar
+                            </a>
+                        </div>
+                    </div>
+                `;
+                productsContainer.appendChild(productElement);
+            });
+
+            // Agregar event listeners a los botones de detalles
+            document.querySelectorAll('.view-details').forEach(button => {
+                button.addEventListener('click', function () {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    showProductDetails(productId);
+                });
+            });
+        }
+
+        // Función para mostrar detalles del producto
+        function showProductDetails(productId) {
+            const product = products.find(p => p.id === productId);
+
+            if (product) {
+                modalContent.innerHTML = `
+                    <div class="product-detail-image">
+                        <img src="${product.image}" alt="${product.title}">
+                    </div>
+                    <div class="product-detail-info">
+                        <h2 class="product-detail-title">${product.title}</h2>
+                        <p class="product-detail-price">${product.price}</p>
+                        <p class="product-detail-description">${product.details}</p>
+                        
+                        <h3>Características:</h3>
+                        <ul class="product-detail-features">
+                            ${product.features.map(feature => `<li>${feature}</li>`).join('')}
+                        </ul>
+                        
+                        <a href="https://wa.me/3195199095?text=Hola,%20quiero%20comprar%20la%20gorra%20${encodeURIComponent(product.title)}%20(${encodeURIComponent(product.price)})" 
+                           class="btn btn-whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                        </a>
+                    </div>
+                `;
+
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Cerrar modal
+        closeModal.addEventListener('click', function () {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Cerrar modal al hacer clic fuera del contenido
+        window.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Función para configurar la paginación
+        function setupPagination() {
+            paginationElement.innerHTML = '';
+
+            const pageCount = Math.ceil(products.length / productsPerPage);
+
+            // Botón Anterior
+            const prevLi = document.createElement('li');
+            prevLi.innerHTML = `<a href="#" id="prev">«</a>`;
+            prevLi.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayProducts(currentPage);
+                    updatePagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+            paginationElement.appendChild(prevLi);
+
+            // Números de página
+            for (let i = 1; i <= pageCount; i++) {
+                const li = document.createElement('li');
+                li.innerHTML = `<a href="#" class="page-link">${i}</a>`;
+
+                if (i === currentPage) {
+                    li.classList.add('active');
+                }
+
+                li.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage = i;
+                    displayProducts(currentPage);
+                    updatePagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+
+                paginationElement.appendChild(li);
+            }
+
+            // Botón Siguiente
+            const nextLi = document.createElement('li');
+            nextLi.innerHTML = `<a href="#" id="next">»</a>`;
+            nextLi.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (currentPage < pageCount) {
+                    currentPage++;
+                    displayProducts(currentPage);
+                    updatePagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+            paginationElement.appendChild(nextLi);
+        }
+
+        // Función para actualizar el estado de la paginación
+        function updatePagination() {
+            const pageLinks = document.querySelectorAll('.page-link');
+            const prevLink = document.getElementById('prev');
+            const nextLink = document.getElementById('next');
+            const pageCount = Math.ceil(products.length / productsPerPage);
+
+            pageLinks.forEach((link, index) => {
+                link.parentElement.classList.remove('active');
+                if (index + 1 === currentPage) {
+                    link.parentElement.classList.add('active');
+                }
+            });
+
+            prevLink.parentElement.classList.toggle('disabled', currentPage === 1);
+            nextLink.parentElement.classList.toggle('disabled', currentPage === pageCount);
+        }
+
+        // Inicializar
+        displayProducts(currentPage);
+        setupPagination();
+    </script>
+</body>
+
+</html>
